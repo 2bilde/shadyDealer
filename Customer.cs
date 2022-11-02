@@ -5,7 +5,7 @@ class customer{
     string name;
     string surName;
     string title; //mr. ms. etc
-
+    
     public customer(int money, string jobs, string gender, string name){
         //money, job, gender random
         Console.WriteLine("What is your full name?");
