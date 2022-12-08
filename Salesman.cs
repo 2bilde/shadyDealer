@@ -6,7 +6,7 @@ public class salesman
 
     public salesman(int price,customer.budget)
     {
-
+    
     }
 
 
