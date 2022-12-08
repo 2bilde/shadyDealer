@@ -1,7 +1,6 @@
 class Car
 {
     int door = 0;
-    int wheels = 0;
     int price = 0;
     int speed = 0;
     int model = 0;
@@ -18,52 +17,58 @@ class Car
         carTypes.Add("Aygo");
         carTypes.Add("Citroën Cactus");
 
-        Random rndModel = new Random();
-        model = rndModel.Next(1, 5);
-
-
-        switch (model)
+        while ()
         {
-            case 1: //Tesla
-                Console.WriteLine("\nAhh yes the " + carTypes[0] + " model. The one we have in store right now has the following");
-                Console.WriteLine(wheels);
-                Console.WriteLine(door);
-                Console.WriteLine(speed);
 
-                if (price >= c.budget)
-                    Console.WriteLine();
-                
-                break;
+            Random rndModel = new Random();
+            model = rndModel.Next(1, 5);
 
-            case 2: //Mecedes
-                Console.WriteLine("\nAhh yes the " + carTypes[1] + " model. The one we have in store right now has the following");
-                Console.WriteLine(wheels);
-                Console.WriteLine(door);
-                Console.WriteLine(speed);
-                break;
+            price = rng.Next(budget / 2, (budget / 5) * 6);
 
-            case 3: //BMW
-                Console.WriteLine("\nAhh yes the " + carTypes[2] + " model. The one we have in store right now has the following");
-                Console.WriteLine(wheels);
-                Console.WriteLine(door);
-                Console.WriteLine(speed);
-                break;
+            switch (model)
+            {
+                case 1: //Tesla
+                    Console.WriteLine("\nAhh yes the " + carTypes[0] + " model. The one we have in store right now has the following");
+                    Console.WriteLine(door);
+                    Console.WriteLine(speed);
 
-            case 4: //Aygo
-                Console.WriteLine("\nAhh yes the " + carTypes[3] + " model. The one we have in store right now has the following");
-                Console.WriteLine(wheels);
-                Console.WriteLine(door);
-                Console.WriteLine(speed);
-                break;
+                    Console.WriteLine("\nThe cars price is $" + price);
 
-            case 5: //Citroën Cactus
-                Console.WriteLine("\nAhh yes the " + carTypes[4] + " model. The one we have in store right now has the following");
-                Console.WriteLine(wheels);
-                Console.WriteLine(door);
-                Console.WriteLine(speed);
-                break;
+                    if (price >= c.budget)
+                        Console.WriteLine("You have enough money to buy the veichle");
+                    Console.WriteLine("Would you like to buy it?");
+                    basement.GetStringInput();
+
+                    break;
+
+                case 2: //Mecedes
+                    Console.WriteLine("\nAhh yes the " + carTypes[1] + " model. The one we have in store right now has the following");
+                    Console.WriteLine(door);
+                    Console.WriteLine(speed);
+                    break;
+
+                case 3: //BMW
+                    Console.WriteLine("\nAhh yes the " + carTypes[2] + " model. The one we have in store right now has the following");
+                    Console.WriteLine(wheels);
+                    Console.WriteLine(door);
+                    Console.WriteLine(speed);
+                    break;
+
+                case 4: //Aygo
+                    Console.WriteLine("\nAhh yes the " + carTypes[3] + " model. The one we have in store right now has the following");
+                    Console.WriteLine(wheels);
+                    Console.WriteLine(door);
+                    Console.WriteLine(speed);
+                    break;
+
+                case 5: //Citroën Cactus
+                    Console.WriteLine("\nAhh yes the " + carTypes[4] + " model. The one we have in store right now has the following");
+                    Console.WriteLine(wheels);
+                    Console.WriteLine(door);
+                    Console.WriteLine(speed);
+                    break;
+            }
+
         }
-
     }
-
 }
