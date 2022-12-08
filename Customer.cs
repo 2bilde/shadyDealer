@@ -1,7 +1,7 @@
 class customer
 {
     string sex;
-    int budget;
+    public int budget;
     string name;
     string surName;
     string title; //mr. ms. etc
@@ -11,20 +11,20 @@ class customer
     {
         //budget and gender is random
         Console.WriteLine("What is your full name?");
-        name = GetStringInput();
+        name = basement.GetStringInput();
         while (name == null)
         {
             Console.WriteLine("please try again");
-            name = GetStringInput();
+            name = basement.GetStringInput();
         }
         string[] splitted = name.Split(' ');
         surName = splitted[splitted.Length - 1];
         Console.WriteLine("what is your title (Mr., Ms., Mrs. etc");
-        title = GetStringInput();
+        title = basement.GetStringInput();
         while (title == null)
         {
             Console.WriteLine("please try again");
-            title = GetStringInput();
+            title = basement.GetStringInput();
         }
 
         Random rng = new Random();
