@@ -1,28 +1,50 @@
-class customer{
-    int money;
-    string job;
-    string gender;
+class customer
+{
+    string sex;
+    int budget;
     string name;
     string surName;
     string title; //mr. ms. etc
 
-    
-    public customer(int money, string jobs, string gender, string name){
-        //money, job, gender random
+
+    public customer(int budget, string jobs, string name)
+    {
+        //budget and gender is random
         Console.WriteLine("What is your full name?");
-        name = Console.ReadLine();
-        while (name == null){
+        name = GetStringInput();
+        while (name == null)
+        {
             Console.WriteLine("please try again");
-            name = Console.ReadLine();
+            name = GetStringInput();
         }
         string[] splitted = name.Split(' ');
-        surName = splitted[splitted.Length-1];
+        surName = splitted[splitted.Length - 1];
         Console.WriteLine("what is your title (Mr., Ms., Mrs. etc");
-        title = Console.ReadLine();
-        while (title == null){
+        title = GetStringInput();
+        while (title == null)
+        {
             Console.WriteLine("please try again");
-            title = Console.ReadLine();
+            title = GetStringInput();
         }
-        Console.WriteLine("Hello " + title + ' ' + surName + ". So nice to see you today. It is my understanding that your budget is $" + money);
+
+        Random rng = new Random();
+        int rngSex = rng.Next(1, 2);
+        switch (rngSex)
+        {
+            case 1:
+                sex = "male";
+                break;
+            case 2:
+                sex = "female";
+                break;
+        }
+
+        budget = rng.Next(100000, 200000);
+        if (sex == "female")
+        {
+            budget = (budget / 4) * 3;
+        }
+
+        
     }
 }
