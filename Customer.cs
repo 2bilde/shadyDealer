@@ -5,6 +5,7 @@ class customer{
     string name;
     string surName;
     string title; //mr. ms. etc
+
     
     public customer(int money, string jobs, string gender, string name){
         //money, job, gender random
@@ -22,6 +23,6 @@ class customer{
             Console.WriteLine("please try again");
             title = Console.ReadLine();
         }
-        Console.WriteLine("Hello " + title + ' ' + surName + ". So nice to see you today. It is my understanding that your budget is $" + budget);
+        Console.WriteLine("Hello " + title + ' ' + surName + ". So nice to see you today. It is my understanding that your budget is $" + money);
     }
 }

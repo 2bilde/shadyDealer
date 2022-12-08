@@ -1,0 +1,5 @@
+class wheels
+{
+int wAmount;
+
+}
