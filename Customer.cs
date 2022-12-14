@@ -4,7 +4,7 @@ class customer
     public int budget;
     string name;
     string surName;
-    string title; //mr. ms. etc
+    public string title; //mr. ms. etc
 
 
     public customer(int budget, string jobs, string name)
