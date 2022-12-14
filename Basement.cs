@@ -2,8 +2,19 @@ class basement
 {
     string buyD; //Buy Drugs
     string ExitB; //Exit Basement
-    public basement(int buyD, int ExitB)
-    {      
+    string EnterB; //Enter Basement
+    private bool _isLocked = true;
+    private int _password;
+    customer player;
+
+
+
+    public basement(string buyD, string ExitB, string EnterB, customer cus)
+    {
+
+        player = cus;
+        Console.WriteLine("Ohh i see how it is. Well follow me " + cus.title);
+
     }
 
 
@@ -18,6 +29,7 @@ class basement
             {
                 return "DrugStore";
             }
+
             else if (input != CheckIfNull)
             {
                 return input;
