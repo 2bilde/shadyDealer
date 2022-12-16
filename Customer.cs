@@ -1,4 +1,4 @@
-class customer
+public class customer
 {
     string sex;
     public int budget;
@@ -7,7 +7,7 @@ class customer
     public string title; //mr. ms. etc
 
 
-    public customer(int budget, string name)
+    public customer()
     {
         //budget and sex is random
         Console.WriteLine("What is your full name?");
