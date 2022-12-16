@@ -11,7 +11,7 @@ class basement
     public basement(int code, string EnterB, customer cus) //
     {
         _password = code;
-        code = 1234;
+        code = 420;
 
         player = cus;
         Console.WriteLine("Ohh i see how it is. Well follow me " + cus.title);
@@ -25,8 +25,13 @@ class basement
         if (_password == code)
         {
             _isLocked = false;
+            return _isLocked;
         }
-        
+
+        else
+        {
+            Console.WriteLine("Are you sure you are in the right place?");
+        }
         return _isLocked;
 
     }
@@ -40,7 +45,7 @@ class basement
 
             if (input == "iddqd")
             {
-                return "DrugStore";
+                new basement()
             }
 
             else if (input != CheckIfNull)
@@ -49,4 +54,23 @@ class basement
             }
         }
     }
+
+    public static string GetStringInput()
+    {
+        while (true)
+        {
+            var input = Console.ReadLine();
+
+            if (input == "iddqd")
+            {
+                new basement()
+            }
+
+            else if (input != CheckIfNull)
+            {
+                return input;
+            }
+        }
+    }
+
 }
