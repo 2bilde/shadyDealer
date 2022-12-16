@@ -7,25 +7,18 @@ class customer
     string title; //mr. ms. etc
 
 
-    public customer(int budget, string jobs, string name)
+    public customer(int budget, string name)
     {
         //budget and gender is random
         Console.WriteLine("What is your full name?");
-        name = GetStringInput();
-        while (name == null)
-        {
-            Console.WriteLine("please try again");
-            name = GetStringInput();
-        }
+        name = basement.GetStringInput();
+        CheckIfNull(name);
+        
         string[] splitted = name.Split(' ');
         surName = splitted[splitted.Length - 1];
         Console.WriteLine("what is your title (Mr., Ms., Mrs. etc");
-        title = GetStringInput();
-        while (title == null)
-        {
-            Console.WriteLine("please try again");
-            title = GetStringInput();
-        }
+        title = basement.GetStringInput();
+        CheckIfNull(title);
 
         Random rng = new Random();
         int rngSex = rng.Next(1, 2);
@@ -47,4 +40,12 @@ class customer
 
         
     }
+    public void CheckIfNull(string input)
+        {
+            while (input == null)
+            {
+                Console.WriteLine("please try again");
+                input = basement.GetStringInput;
+            }
+        }
 }

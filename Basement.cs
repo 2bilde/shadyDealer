@@ -6,19 +6,3 @@ class basement
     {
 
     }
-
-
-
-    public static string GetStringInput()
-    {
-        while (true)
-        {
-            var input = Console.ReadLine();
-            
-            if (input == "iddqd")
-            {
-                return input;
-            }
-        }
-    }
-}
