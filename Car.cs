@@ -9,7 +9,7 @@ class Car
     List<string> carTypes = new List<string>();
 
 
-    public Car(int door, int wheels, int price, int speed, int model)
+    public Car(int door, int price, int speed, int model, customer c)
     {
         carTypes.Add("Tesla");
         carTypes.Add("Mecedes");
@@ -20,10 +20,17 @@ class Car
         while ()
         {
 
-            Random rndModel = new Random();
-            model = rndModel.Next(1, 5);
+            Random rnd = new Random();
 
-            price = rng.Next(budget / 2, (budget / 5) * 6);
+
+            public void removeCars(string model, int i)
+            {
+                i = 5;
+                model = rnd.Next(1, i);
+                i--;
+            }
+
+            price = rnd.Next(c.budget / 2, (c.budget / 5) * 6);
 
             switch (model)
             {
@@ -49,21 +56,18 @@ class Car
 
                 case 3: //BMW
                     Console.WriteLine("\nAhh yes the " + carTypes[2] + " model. The one we have in store right now has the following");
-                    Console.WriteLine(wheels);
                     Console.WriteLine(door);
                     Console.WriteLine(speed);
                     break;
 
                 case 4: //Aygo
                     Console.WriteLine("\nAhh yes the " + carTypes[3] + " model. The one we have in store right now has the following");
-                    Console.WriteLine(wheels);
                     Console.WriteLine(door);
                     Console.WriteLine(speed);
                     break;
 
                 case 5: //Citroën Cactus
                     Console.WriteLine("\nAhh yes the " + carTypes[4] + " model. The one we have in store right now has the following");
-                    Console.WriteLine(wheels);
                     Console.WriteLine(door);
                     Console.WriteLine(speed);
                     break;
