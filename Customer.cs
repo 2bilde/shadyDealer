@@ -45,7 +45,7 @@ class customer
             while (input == null)
             {
                 Console.WriteLine("please try again");
-                input = basement.GetStringInput;
+                input = basement.GetStringInput(this);
             }
         }
 }
