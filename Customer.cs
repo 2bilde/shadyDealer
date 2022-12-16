@@ -9,7 +9,7 @@ class customer
 
     public customer(int budget, string name)
     {
-        //budget and gender is random
+        //budget and sex is random
         Console.WriteLine("What is your full name?");
         name = basement.GetStringInput();
         CheckIfNull(name);

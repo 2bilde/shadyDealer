@@ -43,7 +43,7 @@ class basement
                 return "DrugStore";
             }
 
-            else if (input != CheckIfNull)
+            else
             {
                 return input;
             }
