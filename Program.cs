@@ -1,7 +1,9 @@
 ﻿// See https://aka.ms/new-console-template for more information
+
+
 Console.WriteLine("Hello, World!");
 
-customer c = new customer(1, "placeholderName", "placeholdBudget");
+customer c = new customer("placeholderName", 0S);
 
 Console.ReadLine();
 
