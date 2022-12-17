@@ -1,11 +1,11 @@
-class Car
+public class Car
 {
     int door;
-    int price;
+    public int price;
     int speed;
     int model;
     string answer;
-    customer c;
+    customer c = null;
 
     List<string> carTypes = new List<string>();
 
@@ -37,15 +37,17 @@ class Car
                         Console.WriteLine("You have enough money to buy the vehicle");
                     Console.WriteLine("Would you like to buy it?");
                     answer = basement.GetStringInput();
-                    while (answer != "yes" || answer != "no"){
+                    while (answer != "yes" || answer != "no")
+                    {
                         Console.WriteLine("Im sorry i didnt understand that. Please answer \nyes \nno");
                         answer = basement.GetStringInput();
                     }
                     if (answer == "yes")
                     {
-                        salesman.buy();
+                        new salesman(c);
                     }
-                    else{
+                    else
+                    {
                         Console.WriteLine("Well here is another model");
                     }
                     carTypes.Remove(carTypes[0]);

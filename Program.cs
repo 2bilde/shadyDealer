@@ -1,9 +1,7 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
 
-Console.WriteLine("Hello, World!");
-
-customer c = new customer("placeholderName", 0S);
+customer c = new customer("placeholderName",0);
 
 Console.ReadLine();
 

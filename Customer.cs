@@ -1,4 +1,4 @@
-class customer
+public class customer
 {
     string sex;
     public int budget;
