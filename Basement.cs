@@ -16,20 +16,5 @@ class basement
 
 
 
-    public static string GetStringInput(customer c = null)
-    {
-        while (true)
-        {
-            var input = Console.ReadLine();
 
-            if (input == "iddqd" && c != null)
-            {
-                new basement(c);
-            }
-            else 
-            {
-                return input;
-            }
-        }
-    }
 }

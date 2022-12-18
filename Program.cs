@@ -1,8 +1,9 @@
-﻿// See https://aka.ms/new-console-template for more information
+﻿
 
+Console.WriteLine("What is your full name?");
 
-customer c = new customer("placeholderName",0);
-
+customer c = new customer();
+Car car = new Car(c, 5, 3, 200);
 Console.ReadLine();
 
 
