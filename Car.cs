@@ -18,15 +18,16 @@ public class Car
         Random rnd = new Random();
 
         List<CarType> allModels = CarTypeMethods.GetAllTypes().OrderBy(item => rnd.Next()).ToList();
-
+        Console.WriteLine("Your budget is $" + c.budget);
+        Console.Write("\nAhh yes");
         foreach (CarType carModel in allModels)
         {
 
             model = carModel;
 
-            price = rnd.Next((int)(c.budget / 3.0), (int)((c.budget / 5.0) * 6.0));
+            price = rnd.Next((int)(c.budget / 3.0), (int)((c.budget / 4.0) * 5.0));
 
-            Console.WriteLine("\nAhh yes the " + model.Name() + " model. with " + door + "doors and a top speed of " + speed);
+            Console.WriteLine("The " + model.Name() + " model. with " + door + " doors and a top speed of " + speed);
 
             Console.WriteLine("\nThe cars price is $" + price);
 
