@@ -1,8 +1,10 @@
 ﻿// ting der skal laves:
-//  -   secret code i basement
-//  -   vise budget før og efter køb + bedre/mere flydende historie
+//  -   bedre/mere flydende historie
 //  -   når man enter basement og går ud fortsætter man med bilen. evt ændres?
 //  -   rent faktisk lave forskellige biler med forskellige hjul og topfart (evt gøre prisen afhængig af topfard og døre osv)
+//  -   Buy Drugs method
+//  -   Exit Basement method
+//  -   Enter Basement method
 
 Console.WriteLine("What is your full name?");
 
