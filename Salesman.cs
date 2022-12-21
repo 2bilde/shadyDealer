@@ -9,7 +9,7 @@ public class salesman
         this.car = car;
     }
 
-    public void buy()
+    public void buyCar()
     {
         Console.WriteLine("Here you go " + c.title);
 

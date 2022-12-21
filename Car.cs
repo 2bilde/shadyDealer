@@ -1,6 +1,7 @@
 using static Util;
 public class Car
 {
+    
     int door;
     public int price;
     int speed;
@@ -8,15 +9,17 @@ public class Car
     CarType model;
     string answer;
     customer c = null;
+    Door d = new Door(1, 2);
 
-    public Car(customer c, int door, int wheels, int speed)
+    public Car(customer c, Door d, int wheels, int speed)
     {
         this.c = c;
-        this.door = door;
+        this.d = d;
         this.wheels = wheels;
         this.speed = speed;
         Random rnd = new Random();
 
+        
         List<CarType> allModels = CarTypeMethods.GetAllTypes().OrderBy(item => rnd.Next()).ToList();
         Console.WriteLine("Your budget is $" + c.budget);
         Console.Write("\nAhh yes");
@@ -25,9 +28,11 @@ public class Car
 
             model = carModel;
 
+            
+
             price = rnd.Next((int)(c.budget / 3.0), (int)((c.budget / 4.0) * 5.0));
 
-            Console.WriteLine("The " + model.Name() + " model. with " + door + " doors and a top speed of " + speed);
+            Console.WriteLine("The " + model.Name() + " model. with " + d.doorAmount + " doors and a top speed of " + speed);
 
             Console.WriteLine("\nThe cars price is $" + price);
 
@@ -47,7 +52,7 @@ public class Car
             if (answer == "yes")
             {
                 var s = new salesman(c, this);
-                s.buy();
+                s.buyCar();
                 return;
             }
             else

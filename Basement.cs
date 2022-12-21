@@ -1,7 +1,7 @@
 class basement
 {
     
-    string secretCode = "42069";
+    string secretCode = "420";
     customer player;
 
 
@@ -14,7 +14,7 @@ class basement
         string attempt = Console.ReadLine();
         if (attempt == secretCode){
             //all basement story here
-            Console.WriteLine("Welcome " + player.title);
+            Console.WriteLine("Welcome " + cus.title);
         }
         else {
             Console.WriteLine("i think you got the wrong idea bozo. Lets go back upstairs...");
