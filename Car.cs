@@ -30,6 +30,7 @@ public class Car
             engine = new Engine(model);
 
             price = rnd.Next((int)(customer.budget / 3.0), (int)((customer.budget / 4.0) * 5.0));
+            price = (int)((double)price*((double)engine.topSpeed/1000.0 + 1.0));
 
             Console.WriteLine("The " + model.Name() + " model. with " + door.doorAmount + " doors and a top speed of " + engine.topSpeed + "km/t");
 

@@ -1,6 +1,5 @@
 ﻿// ting der skal laves:
 //  -   bedre/mere flydende historie
-//  -   rent faktisk lave forskellige biler med forskellige hjul og topfart (evt gøre prisen afhængig af topfard og døre osv)
 //  -   Buy Drugs method (inheritance from buy cars?)
 //  -   Enter Basement story
 
