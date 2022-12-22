@@ -6,9 +6,8 @@
 
 Console.WriteLine("What is your full name?");
 
-customer c = new customer();
-Door d = new Door(1, 2);
-Car car = new Car(c, d, 4, 200);
+Customer c = new Customer();
+Car car = new Car(c, 4);
 Console.ReadLine();
 
 

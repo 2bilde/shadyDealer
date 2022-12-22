@@ -9,7 +9,7 @@ public class Util {
             }
             return input;
     }
-    public static string GetStringInput(customer? c = null)
+    public static string GetStringInput(Customer? c = null)
     {
         while (true)
         {

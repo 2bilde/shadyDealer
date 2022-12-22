@@ -1,9 +1,9 @@
-public class salesman
+public class Salesman
 {
-    customer c;
+    Customer c;
     Car car;
 
-    public salesman(customer c, Car car)
+    public Salesman(Customer c, Car car)
     {
         this.c = c;
         this.car = car;

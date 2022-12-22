@@ -2,10 +2,10 @@ class basement
 {
     
     string secretCode = "420";
-    customer player;
+    Customer player;
 
 
-    public basement(customer cus) //
+    public basement(Customer cus) //
     {
         player = cus;
         Console.WriteLine("Ohh i see how it is. Well follow me " + cus.title);
@@ -15,6 +15,13 @@ class basement
         if (attempt == secretCode){
             //all basement story here
             Console.WriteLine("Welcome " + cus.title);
+            Console.WriteLine("As you can see we have a lot in stock right now so what would you like?");
+            Console.WriteLine("Cocain");
+            Console.WriteLine("");
+            Console.WriteLine("");
+            Console.WriteLine("");
+            Console.WriteLine("");
+
         }
         else {
             Console.WriteLine("i think you got the wrong idea bozo. Lets go back upstairs...");

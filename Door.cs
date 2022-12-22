@@ -1,14 +1,15 @@
+
 public class Door{
     
-    public int doorMin = 1;
-    public int doorMax = 2;
+    const int DOOR_MIN = 1;
+    const int DOOR_MAX = 2;
     public int doorAmount;
 
-    public void DoorAmount(int doorMin, int doorMax){
-        Random rng = new Random();
 
-    int doorAmount = rng.Next(doorMin, doorMax);
-        switch (doorAmount){
+    public Door(){
+        Random rng = new Random();
+        //converts 1 or 2 into 3 or 5 doors, +1 because rng.Next goes [low number; high number[
+        switch ( rng.Next(DOOR_MIN, DOOR_MAX+1)){
         case 1:
             doorAmount = 3;
             break;
@@ -18,7 +19,4 @@ public class Door{
         }
     }
     
-    public Door(int doorMin, int doorMax){
-        
-    }
 }

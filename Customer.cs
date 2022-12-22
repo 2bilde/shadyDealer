@@ -1,5 +1,5 @@
 using static Util;
-public class customer
+public class Customer
 {
     string sex;
     public double budget;
@@ -8,7 +8,7 @@ public class customer
     public string title; //mr. ms. etc
 
 
-    public customer()
+    public Customer()
     {
         //budget and sex is random
         name = GetStringInput();

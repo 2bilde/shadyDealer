@@ -1,4 +1,4 @@
-class wheels
+class Wheels
 {
 int wAmount;
 
