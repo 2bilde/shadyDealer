@@ -13,7 +13,7 @@ public class Salesman
     {
         Console.WriteLine("Here you go " + c.title);
 
-        c.budget = c.budget - car.price;
+        c.budget -= car.price;
 
         Console.WriteLine("Your new budget is");
         Console.ForegroundColor = ConsoleColor.Red;

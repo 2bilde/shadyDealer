@@ -7,6 +7,9 @@ public class Customer
     string surName;
     public string title; //mr. ms. etc
 
+    public string ToString() {
+        return $"sex: {sex}, budget: {budget}, name: {name}, surName: {surName}, title: {title}";
+    }
 
     public Customer()
     {
