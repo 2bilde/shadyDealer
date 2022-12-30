@@ -15,7 +15,6 @@ public class Salesman
 
         c.budget -= car.price;
 
-        Console.WriteLine("Your new budget is");
         Console.ForegroundColor = ConsoleColor.Red;
         Console.WriteLine("-" + car.price);
         Console.ForegroundColor = ConsoleColor.Green;

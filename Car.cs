@@ -29,7 +29,7 @@ public class Car
             door = new Door();
             engine = new Engine(model);
 
-            price = rnd.Next((int)(customer.budget / 3.0), (int)((customer.budget / 4.0) * 5.0));
+            price = rnd.Next((int)(customer.budget / 3.0), (int)((customer.budget / 10.0) * 11.0));
             price = (int)((double)price*((double)engine.topSpeed/1000.0 + 1.0));
 
             Console.WriteLine("The " + model.Name() + " model. with " + door.doorAmount + " doors and a top speed of " + engine.topSpeed + "km/t");
@@ -39,7 +39,7 @@ public class Car
             if (price <= customer.budget)
                 Console.WriteLine("You have enough money to buy the vehicle");
             else {
-                Console.WriteLine("You don't have enough money to buy this car, so lets skip to the next one.");
+                Console.WriteLine("You don't have enough money to buy this car, so lets skip to the next one. \n");
                 continue;
             }
             Console.WriteLine("Would you like to buy it?");
