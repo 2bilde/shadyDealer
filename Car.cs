@@ -20,7 +20,9 @@ public class Car
 
         
         List<CarType> allModels = CarTypeMethods.GetAllTypes().OrderBy(item => rnd.Next()).ToList();
+        Console.ForegroundColor = ConsoleColor.Green;
         Console.WriteLine("Your budget is $" + customer.budget);
+        Console.ForegroundColor = ConsoleColor.Gray;
         Console.Write("\nAhh yes ");
         foreach (CarType carModel in allModels)
         {
@@ -40,6 +42,7 @@ public class Car
                 Console.WriteLine("You have enough money to buy the vehicle");
             else {
                 Console.WriteLine("You don't have enough money to buy this car, so lets skip to the next one. \n");
+                Thread.Sleep(1000);
                 continue;
             }
             Console.WriteLine("Would you like to buy it?");
@@ -57,7 +60,7 @@ public class Car
             }
             else
             {
-                Console.WriteLine("Well here is another model");
+                Console.WriteLine("Well here is another model \n");
             }
         }
         Console.WriteLine("Unfortunetly we don't have any more cars. So get the fuck out of here!");
