@@ -41,7 +41,7 @@ class basement
                 Console.WriteLine("I'm sorry? i dont think i heard that right. This aint no small business buddy. we operating in MINIMUM 100grams. \nSo how much did you want again?");
                 grams = Convert.ToInt32(Console.ReadLine());
                 }
-
+            Console.WriteLine("you get zhe drugsg, shit works");
             
             }
             Console.WriteLine("I see you are low on money at the time. How about we go back upstairs...");
