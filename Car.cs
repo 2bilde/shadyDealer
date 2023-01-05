@@ -1,75 +1,69 @@
-class Car
+using static Util;
+public class Car
 {
-    int door;
-    int price;
+    
+    public int price;
     int speed;
-    int model;
+    int wheels;
+    CarType model;
     string answer;
-    customer c;
+    Customer customer = null;
+    Door door;
+    Engine engine;
 
-    List<string> carTypes = new List<string>();
-
-
-    public Car(int door, int wheels, int price, int speed, int model)
+    public Car(Customer customer, int wheels)
     {
-        carTypes.Add("Tesla");
-        carTypes.Add("Mecedes");
-        carTypes.Add("BMW");
-        carTypes.Add("Aygo");
-        carTypes.Add("Citroën Cactus");
+        this.customer = customer;
+        this.wheels = wheels;
+        
+        Random rnd = new Random();
 
-        while (carTypes.Count != 0)
+        
+        List<CarType> allModels = CarTypeMethods.GetAllTypes().OrderBy(item => rnd.Next()).ToList();
+        Console.ForegroundColor = ConsoleColor.Green;
+        Console.WriteLine("Your budget is $" + customer.budget);
+        Console.ForegroundColor = ConsoleColor.Gray;
+        Console.Write("\nAhh yes ");
+        foreach (CarType carModel in allModels)
         {
 
-            Random rnd = new Random();
-            model = rnd.Next(1, carTypes.Count);
+            model = carModel;
+            door = new Door();
+            engine = new Engine(model);
 
-            price = rnd.Next(c.budget / 3, (c.budget / 5) * 6);
+            price = rnd.Next((int)(customer.budget / 3.0), (int)((customer.budget / 10.0) * 11.0));
+            price = (int)((double)price*((double)engine.topSpeed/1000.0 + 1.0));
 
-            switch (model)
-            {
-                case 1: //Tesla
-                    Console.WriteLine("\nAhh yes the " + carTypes[0] + " model. with " + door + "doors and a top speed of " + speed);
+            Console.WriteLine("The " + model.Name() + " model. with " + door.doorAmount + " doors and a top speed of " + engine.topSpeed + "km/t");
 
-                    Console.WriteLine("\nThe cars price is $" + price);
+            Console.WriteLine("\nThe cars price is $" + price);
 
-                    if (price >= c.budget)
-                        Console.WriteLine("You have enough money to buy the vehicle");
-                    Console.WriteLine("Would you like to buy it?");
-                    answer = basement.GetStringInput();
-                    while (answer != "yes" || answer != "no"){
-                        Console.WriteLine("Im sorry i didnt understand that. Please answer \nyes \nno");
-                        answer = basement.GetStringInput();
-                    }
-                    if (answer == "yes")
-                    {
-                        salesman.buy();
-                    }
-                    else{
-                        Console.WriteLine("Well here is another model");
-                    }
-                    carTypes.Remove(carTypes[0]);
-                    break;
-
-                case 2: //Mecedes
-                    Console.WriteLine("\nAhh yes the " + carTypes[1] + " model. with " + door + "doors and a top speed of " + speed);
-                    break;
-
-                case 3: //BMW
-                    Console.WriteLine("\nAhh yes the " + carTypes[2] + " model. with " + door + "doors and a top speed of " + speed);
-                    break;
-
-                case 4: //Aygo
-                    Console.WriteLine("\nAhh yes the " + carTypes[3] + " model. with " + door + "doors and a top speed of " + speed);
-                    break;
-
-                case 5: //Citroën Cactus
-                    Console.WriteLine("\nAhh yes the " + carTypes[4] + " model. with " + door + "doors and a top speed of " + speed);
-                    break;
+            if (price <= customer.budget)
+                Console.WriteLine("You have enough money to buy the vehicle");
+            else {
+                Console.WriteLine("You don't have enough money to buy this car, so lets skip to the next one. \n");
+                Thread.Sleep(1000);
+                continue;
             }
-
+            Console.WriteLine("Would you like to buy it?");
+            answer = GetStringInput(customer).ToLower();
+            while (answer != "yes" && answer != "no")
+            {
+                Console.WriteLine("Im sorry i didnt understand that. Please answer \nyes \nno");
+                answer = GetStringInput(customer).ToLower();
+            }
+            if (answer == "yes")
+            {
+                var salesman = new Salesman(customer, this);
+                salesman.buyCar();
+                return;
+            }
+            else
+            {
+                Console.WriteLine("Well here is another model \n");
+            }
         }
-        Console.WriteLine("Get the fuck out of here");
-        basement.GetStringInput();
+        Console.WriteLine("Unfortunetly we don't have any more cars. So get the fuck out of here!");
+        GetStringInput(customer);
     }
 }

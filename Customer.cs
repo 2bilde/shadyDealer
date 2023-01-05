@@ -1,26 +1,32 @@
-class customer
+using static Util;
+public class Customer
 {
     string sex;
-    public int budget;
+    public double budget;
     string name;
     string surName;
     public string title; //mr. ms. etc
 
+    public string ToString() {
+        return $"sex: {sex}, budget: {budget}, name: {name}, surName: {surName}, title: {title}";
+    }
 
-    public customer(int budget, string name)
+    public Customer()
     {
         //budget and sex is random
-        Console.WriteLine("What is your full name?");
-        name = basement.GetStringInput();
-        CheckIfNull(name);
+        name = GetStringInput();
+        name = CheckIfNull(name);
         
         string[] splitted = name.Split(' ');
         surName = splitted[splitted.Length - 1];
-        Console.WriteLine("what is your title (Mr., Ms., Mrs. etc");
-        title = basement.GetStringInput();
-        CheckIfNull(title);
+
+        Console.WriteLine("what is your title (Mr., Ms., Mrs., Etc.)");
+        title = GetStringInput();
+        title = CheckIfNull(title);
 
         Random rng = new Random();
+        budget = rng.Next(100000, 200000);
+
         int rngSex = rng.Next(1, 2);
         switch (rngSex)
         {
@@ -29,23 +35,9 @@ class customer
                 break;
             case 2:
                 sex = "female";
+                budget *= 3.0/4.0;
                 break;
         }
-
-        budget = rng.Next(100000, 200000);
-        if (sex == "female")
-        {
-            budget = (budget / 4) * 3;
-        }
-
         
     }
-    public void CheckIfNull(string input)
-        {
-            while (input == null)
-            {
-                Console.WriteLine("please try again");
-                input = basement.GetStringInput(this);
-            }
-        }
 }

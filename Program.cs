@@ -1,9 +1,16 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+﻿// ting der skal laves:
+//  -   bedre/mere flydende historie evt
+//  -   Buy Drugs method
+//  -   basement story efter køb af stoffer
+//  -   historie efter en bil er købt
+//  -   fix tiden efter man ikke har råd
 
-customer c = new customer(1, "placeholderName", "placeholdBudget");
 
+Console.WriteLine("What is your full name?");
+
+Customer c = new Customer();
+
+Console.WriteLine(c.ToString());
+Car car = new Car(c, 4);
+Console.WriteLine(c.ToString());
 Console.ReadLine();
-
-
-
