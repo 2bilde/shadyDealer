@@ -2,7 +2,7 @@ class Engine
 {
     public 
     int topSpeed = 100;
-    public Engine(CarType type)
+    public Engine(CarType type) //genererer tilfældig top hastiged. 100 + 10-50 * bil specifikt tal
     {
         Random rnd = new Random();
         int spd = rnd.Next(10,50);

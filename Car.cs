@@ -19,12 +19,12 @@ public class Car
         Random rnd = new Random();
 
         
-        List<CarType> allModels = CarTypeMethods.GetAllTypes().OrderBy(item => rnd.Next()).ToList();
+        List<CarType> allModels = CarTypeMethods.GetAllTypes().OrderBy(item => rnd.Next()).ToList(); //får alle biler fra bil listen og laver dem til en tilfældig liste
         Console.ForegroundColor = ConsoleColor.Green;
         Console.WriteLine("Your budget is $" + customer.budget);
         Console.ForegroundColor = ConsoleColor.Gray;
         Console.Write("\nAhh yes ");
-        foreach (CarType carModel in allModels)
+        foreach (CarType carModel in allModels) //går gennem alle biler en af gangen
         {
 
             model = carModel;
@@ -32,25 +32,25 @@ public class Car
             engine = new Engine(model);
 
             price = rnd.Next((int)(customer.budget / 3.0), (int)((customer.budget / 10.0) * 11.0));
-            price = (int)((double)price*((double)engine.topSpeed/1000.0 + 1.0));
+            price = (int)((double)price*((double)engine.topSpeed/1000.0 + 1.0)); //sætter prisen baseret på topfart. hvis topfart er 200 er det pris * 1,200
 
             Console.WriteLine("The " + model.Name() + " model. with " + door.doorAmount + " doors and a top speed of " + engine.topSpeed + "km/t");
 
             Console.WriteLine("\nThe cars price is $" + price);
 
-            if (price <= customer.budget)
+            if (price <= customer.budget) //tjekker om man har råd
                 Console.WriteLine("You have enough money to buy the vehicle");
             else {
                 Console.WriteLine("You don't have enough money to buy this car, so lets skip to the next one. \n");
                 Thread.Sleep(1000);
-                continue;
+                continue; //hvis man ikke har råd går den videre til næste bil
             }
             Console.WriteLine("Would you like to buy it?");
             answer = GetStringInput(customer).ToLower();
             while (answer != "yes" && answer != "no")
             {
                 Console.WriteLine("Im sorry i didnt understand that. Please answer \nyes \nno");
-                answer = GetStringInput(customer).ToLower();
+                answer = GetStringInput(customer).ToLower(); //de skal svare ja eller nej"
             }
             if (answer == "yes")
             {
@@ -63,7 +63,7 @@ public class Car
                 Console.WriteLine("Well here is another model \n");
             }
         }
-        Console.WriteLine("Unfortunetly we don't have any more cars. So get the fuck out of here!");
+        Console.WriteLine("Unfortunetly we don't have any more cars. So get the fuck out of here!"); //idk, slutning hvis de siger nej til det hele
         GetStringInput(customer);
     }
 }

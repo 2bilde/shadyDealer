@@ -10,7 +10,7 @@ Console.WriteLine("What is your full name?");
 
 Customer c = new Customer();
 
-Console.WriteLine(c.ToString());
+Console.WriteLine(c.ToString()); //testede om classes var pointers, kan slettes
 Car car = new Car(c, 4);
 Console.WriteLine(c.ToString());
 Console.ReadLine();
