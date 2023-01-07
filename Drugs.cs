@@ -1,15 +1,6 @@
-/*
-liste over stoffer
-kokain
-heroin
-blå meth
-hash
-2C-B
-speed
-khat
-*/
-
 public class Drugs{
+
+    //evt flyt liste af stoffer herind?
 
     string drugChoice;
     public Drugs(){

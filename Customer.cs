@@ -7,7 +7,7 @@ public class Customer
     string surName;
     public string title; //mr. ms. etc
 
-    public string ToString() {
+    public string ToString() { //viser kundens "stats". mest til at tjekke om classes var pointers. kan slettes
         return $"sex: {sex}, budget: {budget}, name: {name}, surName: {surName}, title: {title}";
     }
 
@@ -18,16 +18,16 @@ public class Customer
         name = CheckIfNull(name);
         
         string[] splitted = name.Split(' ');
-        surName = splitted[splitted.Length - 1];
+        surName = splitted[splitted.Length - 1]; //splitter "name" ved mellemrum og får den sidste del som efternavn
 
         Console.WriteLine("what is your title (Mr., Ms., Mrs., Etc.)");
         title = GetStringInput();
         title = CheckIfNull(title);
 
-        Random rng = new Random();
+        Random rng = new Random(); //budget mellem 100k og 200k
         budget = rng.Next(100000, 200000);
 
-        int rngSex = rng.Next(1, 2);
+        int rngSex = rng.Next(1, 2); //hvis du er kvinde er dit budget 3/4 af hvad det startede med
         switch (rngSex)
         {
             case 1:

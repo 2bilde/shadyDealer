@@ -1,7 +1,7 @@
 public class Util {
-    public static string CheckIfNull(string input)
+    public static string CheckIfNull(string input) //tjekker om brogeren rent faktisk har skrevet et input
     {
-            input = input.Trim();
+            input = input.Trim(); //trimmer inputtet så de ikke bare kan skrive " "
             while (input == null || input.Length == 0)
             {
                 Console.WriteLine("please try again");
@@ -9,7 +9,7 @@ public class Util {
             }
             return input;
     }
-    public static string GetStringInput(Customer? c = null)
+    public static string GetStringInput(Customer? c = null) //tjekker om inputtet er "iddqd"
     {
         while (true)
         {
