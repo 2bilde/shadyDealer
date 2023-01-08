@@ -18,6 +18,7 @@ public class Util {
             if (input == "iddqd" && c != null)
             {
                 new basement(c);
+                Console.WriteLine("so did you want to buy the car?");
             }
             else 
             {
