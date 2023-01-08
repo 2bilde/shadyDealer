@@ -14,11 +14,12 @@ public class Util {
         while (true)
         {
             var input = Console.ReadLine();
+            input.ToLower();
 
             if (input == "iddqd" && c != null)
             {
                 new basement(c);
-                Console.WriteLine("so did you want to buy the car?");
+            
             }
             else 
             {

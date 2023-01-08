@@ -60,6 +60,7 @@ public class Car
                     salesman.buyCar();
                     Console.WriteLine("pleasure doing business."); //skriver IDDQD med store bogstaver så man har en chance for at gætte
                     Console.WriteLine("I think you shoulD be going now. unless you woulD like to play this again and Quiz me on more cars? Do what youd like. \nmaybe youll get a different experience");
+                    GetStringInput();
                     gotCar = true;
                     continue;
                 }
@@ -71,13 +72,15 @@ public class Car
             }
         }
         if(gotCar == false){
-            Console.WriteLine("Unfortunetly we don't have any more cars. So get the fuck out of here!"); //idk, slutning hvis de siger nej til det hele
+            Console.WriteLine("Unfortunetly we don't have any more cars. Please come back another time :D"); //idk, slutning hvis de siger nej til det hele
         GetStringInput(customer);
         }
         else {
-            Thread.Sleep(5000);
+
+            Thread.Sleep(2000);
             Console.WriteLine("Well you got your car so get going already");
+            GetStringInput();
         }
-        
+        GetStringInput();
     }
 }

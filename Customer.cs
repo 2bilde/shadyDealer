@@ -7,10 +7,6 @@ public class Customer
     string surName;
     public string title; //mr. ms. etc
 
-    public string ToString() { //viser kundens "stats". mest til at tjekke om classes var pointers. kan slettes
-        return $"sex: {sex}, budget: {budget}, name: {name}, surName: {surName}, title: {title}";
-    }
-
     public Customer()
     {
         //budget and sex is random
