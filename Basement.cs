@@ -47,8 +47,15 @@ class basement
                 Console.WriteLine("I'm sorry? i dont think i heard that right. This aint no small business buddy. we operating in MINIMUM 100grams. \nSo how much did you want again?");
                 grams = Convert.ToInt32(Console.ReadLine());
                 }
-                Console.WriteLine("you get zhe drugsg, shit works"); //placeholder. du skal købe stofferne 
-            
+                Console.WriteLine("Here you go " + cus.title); 
+                cus.budget -= (drugList[choice-1].Item2 * grams);
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine(" - " + (drugList[choice-1].Item2 * grams));
+                Console.ForegroundColor = ConsoleColor.Green;
+                Console.WriteLine("Your new budget is " + cus.budget);
+                Console.ForegroundColor = ConsoleColor.Gray;
+
+                Console.WriteLine("Thank you for doing business, lets go back upstairs");
             }
             else{
                 Console.WriteLine("I see you are low on money at the time. How about we go back upstairs..."); //de har ikke råd
