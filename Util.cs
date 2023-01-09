@@ -13,8 +13,8 @@ public class Util {
     {
         while (true)
         {
-            var input = Console.ReadLine();
-            input.ToLower();
+            string input =  Console.ReadLine();
+            input = input.ToLower(); 
 
             if (input == "iddqd" && c != null)
             {

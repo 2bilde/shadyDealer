@@ -17,7 +17,7 @@ public class Customer
         surName = splitted[splitted.Length - 1]; //splitter "name" ved mellemrum og får den sidste del som efternavn
 
         Console.WriteLine("what is your title (Mr., Ms., Mrs., Etc.)");
-        title = GetStringInput();
+        title = Console.ReadLine();
         title = CheckIfNull(title);
 
         Random rng = new Random(); //budget mellem 100k og 200k
